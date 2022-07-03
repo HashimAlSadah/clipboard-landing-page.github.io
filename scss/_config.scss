@@ -1,0 +1,72 @@
+@use "./mixin";
+
+$strong-cyan: hsl(171, 66%, 44%);
+$light-blue: hsl(233, 100%, 69%);
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
+$main-font-family: 'Bai Jamjuree', sans-serif;
+$font-default-size: 1.01rem;
+$break-point-1: 700px;
+$break-point-2: 1000px;
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $main-font-family;
+}
+
+@include mixin.screenMinWidthStyle($break-point-1){
+    .mobile{
+        display: none;
+    }
+}
+
+//--------For accessbility purposes------- 
+.sr-only{
+    position: absolute;
+    border: 1px solid black;
+    left: 10000px;
+}
+
+.section__intro{
+    position: relative;
+    overflow: hidden;
+}
+//---------------------------------------
+
+p{
+    color: $grayish-blue;
+    font-size: $font-default-size;
+    line-height: 1.6;
+    @include mixin.screenMinWidthStyle(700px){
+        font-size: 1.1em;
+    }
+}
+
+h1, h2{
+    color: $dark-grayish-blue;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+body{
+    text-align: center;
+}
+
+.main{
+    padding: 0 2em;
+}

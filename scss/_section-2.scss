@@ -1,0 +1,13 @@
+@use "./mixin";
+
+.section-2{
+    margin: 7em 0 5em 0 ;
+}
+
+.access__image{
+    margin-top: 2.5em;
+    @include mixin.screenMinWidthStyle($break-point-1){
+        width: clamp(0px, 65%, 900px);
+        margin: 2.5em auto 0 auto;
+    }
+}

@@ -1,0 +1,40 @@
+@use "./mixin";
+
+.compaines{
+    margin-top: 5em;
+}
+
+.compaines img{
+    width: 120px;
+    margin: 0 auto;
+}
+
+.compaines img + img{
+    margin-top: 4em;
+}
+
+@include mixin.screenMinWidthStyle($break-point-1 + 10px){
+    .compaines{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2em 2em;
+        flex-wrap: wrap;
+    }
+
+    .compaines img + img{
+        margin-top: 0;
+    }
+}
+
+@include mixin.screenMinWidthStyle($break-point-2){
+    .compaines{
+        max-width: 1240px;
+        margin: 10em auto 0 auto;
+        padding: 0 2em;
+    }
+
+    .compaines img{
+        margin: 0;
+    }
+}

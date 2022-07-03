@@ -1,0 +1,35 @@
+@use "./mixin";
+
+.hero{
+    max-width: 550px;
+    margin: 3.5em auto; 
+}
+
+@include mixin.screenMinWidthStyle($break-point-2){
+    .row{
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        margin-top: 7em;
+    }
+
+    .row p, .row h2{
+        text-align: left;
+    }
+
+    .hero{
+        max-width: 800px;
+        margin: 0;
+        margin-left: clamp(-30em, -10vw, -20em);
+    }
+
+    .column{
+        max-width: 390px;
+        margin-top: 2em;
+        // border: 1px solid black;
+        
+    }
+}
+
+
+    
